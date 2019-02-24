@@ -1,0 +1,35 @@
+{
+    "id": 2,
+    "fare": 2240,
+    "shipperRatingScore": 3.2,
+    "weight": 45000,
+    "commodity": "Apples",
+    "equipmentSize": "53",
+    "equipmentType": "DRV",
+    "map": "https://loadsmart-coding-test-frontend.herokuapp.com/assets/img/map.png",
+    "stops": [{
+        "address": "404 W Bay St",
+        "city": "Savannah",
+        "state": "GA",
+        "country": "USA",
+        "zipcode": "31401",
+        "windowStart": "2016-02-26T14:00:00.000Z",
+        "windowEnd": "2016-02-26T22:00:00.000Z",
+        "startTimeZone": "America/New_York",
+        "latitude": 40.722453,
+        "longitude": -74.002819,
+        "accessorials": ["pallet_jack"]
+    }, {
+        "address": "39W585 Jericho Rd",
+        "city": "Aurora",
+        "state": "IL",
+        "zipcode": "60506",
+        "country": "USA",
+        "windowStart": "2016-02-26T14:00:00.000Z",
+        "windowEnd": "2016-02-26T22:00:00.000Z",
+        "startTimeZone": "America/New_York",
+        "latitude": 25.775148,
+        "longitude": -80.193629,
+        "accessorials": ["lift_gate"]
+    }]
+}

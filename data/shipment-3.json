@@ -1,0 +1,35 @@
+{
+    "id": 3,
+    "fare": 12240,
+    "shipperRatingScore": 4.5,
+    "weight": 50000,
+    "commodity": "Apples",
+    "equipmentSize": "53",
+    "equipmentType": "DRV",
+    "map": "https://loadsmart-coding-test-frontend.herokuapp.com/assets/img/map.png",
+    "stops": [{
+        "address": "225 E 134th St",
+        "city": "Bronx",
+        "state": "NY",
+        "zipcode": "10454",
+        "country": "USA",
+        "windowStart": "2016-03-26T14:00:00.000Z",
+        "windowEnd": "2016-03-26T22:00:00.000Z",
+        "startTimeZone": "America/New_York",
+        "latitude": 40.722453,
+        "longitude": -74.002819,
+        "accessorials": ["pallet_jack"]
+    }, {
+        "address": "1 W Chicago Ave",
+        "city": "Chicago",
+        "state": "IL",
+        "zipcode": "60622",
+        "country": "USA",
+        "windowStart": "2016-03-29T14:00:00.000Z",
+        "windowEnd": "2016-03-29T22:00:00.000Z",
+        "startTimeZone": "America/New_York",
+        "latitude": 25.775148,
+        "longitude": -80.193629,
+        "accessorials": ["lumper"]
+    }]
+}
