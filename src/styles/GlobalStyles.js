@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
 
   #root {
     min-height: 100%;
-    background-color: #e6eaea;
+    background-color: #f4f7f6;
   }
 
   * {

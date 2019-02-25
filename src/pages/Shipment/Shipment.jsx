@@ -1,15 +1,27 @@
-import React, { PureComponent } from 'react';
+import React, { Fragment } from 'react';
+import { ShipmentConsumer } from '../../context/ShipmentContext';
 import AppBar from '../../components/AppBar';
-import Container from './ShipmentStyles';
+import ListShipments from '../../components/ListShipments';
+import { Page, PageContent } from './ShipmentStyles';
 
-class Shipment extends PureComponent {
-  render() {
-    return (
-      <Container>
-        <AppBar />
-        Work in progress
-      </Container>
-    );
-  }
-}
+const Shipment = () => (
+  <Page>
+    <AppBar />
+    <PageContent>
+      <ShipmentConsumer>
+        {({ isLoading, listShipments, onSelectShipment, shipmentDetails }) => (
+          <Fragment>
+            <ListShipments
+              items={listShipments}
+              onSelectShipment={onSelectShipment}
+              selectedItemId={shipmentDetails.id}
+            />
+            {JSON.stringify(shipmentDetails)}
+          </Fragment>
+        )}
+      </ShipmentConsumer>
+    </PageContent>
+  </Page>
+);
+
 export default Shipment;
