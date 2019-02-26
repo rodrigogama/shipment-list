@@ -3,10 +3,12 @@ import { formatCurrency, formatDate } from '../../utils';
 import {
   ShipmentListContainer,
   ShipmentListItem,
-  HeaderItem,
-  BodyItem,
+  StopsContainer,
+  StopWrapper,
+  FlexRow,
   TruckIcon,
   TitleText,
+  TextRegular,
   TextBold,
   PriceText
 } from './ListShipmentsStyles';
@@ -20,19 +22,19 @@ const ListShipments = ({ items, onSelectShipment, selectedItemId }) => {
           onClick={() => onSelectShipment(item)}
           active={item.id === selectedItemId}
         >
-          <HeaderItem>
+          <FlexRow>
             <TruckIcon />
             <TitleText>{`${item.equipmentType} ${item.equipmentSize}"`}</TitleText>
             <PriceText>{formatCurrency(item.fare)}</PriceText>
-          </HeaderItem>
-          <BodyItem>
+          </FlexRow>
+          <StopsContainer>
             {item.stops.map((stop, index) => (
-              <TextBold key={`stop_${index}`}>
-                {`${stop.city}, ${stop.state} ${stop.zipcode}`} <br />
-                {formatDate(stop.windowStart)}
-              </TextBold>
+              <StopWrapper key={`stop_${index}`}>
+                <TextBold>{`${stop.city}, ${stop.state} ${stop.zipcode}`}</TextBold>
+                <TextRegular>{formatDate(stop.windowStart)}</TextRegular>
+              </StopWrapper>
             ))}
-          </BodyItem>
+          </StopsContainer>
         </ShipmentListItem>
       ))}
     </ShipmentListContainer>

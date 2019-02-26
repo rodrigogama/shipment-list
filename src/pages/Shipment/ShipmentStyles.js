@@ -8,7 +8,7 @@ export const Page = styled.div`
 
 export const PageContent = styled.div`
   height: 80vh;
-  padding: 0 80px;
+  padding: 0 60px;
   display: flex;
   background: ${({ theme }) => theme.colors.white};
 `;

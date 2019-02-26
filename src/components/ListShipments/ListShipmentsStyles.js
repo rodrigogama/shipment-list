@@ -5,10 +5,20 @@ export const ShipmentListContainer = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  width: 40%;
+  position: relative;
+  width: 45%;
   margin-bottom: 8px;
-  border-right: 1px solid #e8e8e8;
   background: ${({ theme }) => theme.colors.lightGray};
+
+  &:before {
+    content: '';
+    position: absolute;
+    background: #e8e8e8;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 1.5px;
+  }
 `;
 
 export const ShipmentListItem = styled.li`
@@ -17,26 +27,52 @@ export const ShipmentListItem = styled.li`
   padding: 16px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
+  transition-property: background-color;
+  transition-duration: ${({ theme }) => theme.transition.duration};
+  transition-timing-function: ${({ theme }) => theme.transition.timingFn};
 
   ${({ active, theme }) =>
     active &&
     `
     background: ${theme.colors.white}
-  `} /* &:last-child:after {
-    content: '';
-    position: absolute;
-    bottom: 0px;
-    left: 16px;
-    right: 16px;
-    height: 1px;
-    background: #e8e8e8;
-  } */
+    border: 1.5px solid #e8e8e8;
+    border-right: 0px;
+  `}
 `;
 
-export const HeaderItem = styled.div`
+export const FlexRow = styled.div`
   display: flex;
   align-items: center;
+`;
+
+export const StopsContainer = styled(FlexRow)`
+  flex: 1;
+  width: 85%;
+  align-items: unset;
+  justify-content: space-between;
+`;
+
+export const StopWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+
+  &:first-of-type {
+    margin-right: 12px;
+    position: relative;
+
+    &:after {
+      content: '>';
+      right: 10px;
+      top: 6px;
+      color: ${({ theme }) => theme.colors.darkGray};
+      position: absolute;
+    }
+  }
 `;
 
 export const TextBold = styled.p`
@@ -46,6 +82,12 @@ export const TextBold = styled.p`
   color: #58585b;
 `;
 
+export const TextRegular = styled.p`
+  margin: 0;
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.darkGray};
+`;
+
 export const PriceText = styled(TextBold)`
   flex: 1;
   font-size: 18px;
@@ -53,20 +95,13 @@ export const PriceText = styled(TextBold)`
   text-align: right;
 `;
 
-export const TitleText = styled.p`
-  margin: 0;
-  font-size: 14px;
-  color: ${({ theme }) => theme.colors.darkGray};
-`;
-
-export const BodyItem = styled.div`
-  display: flex;
-  justify-content: space-between;
+export const TitleText = styled(TextRegular)`
+  font-size: 13px;
 `;
 
 export const TruckIcon = styled(TruckSVG)`
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   margin-right: 12px;
   fill: #58585b;
 `;
