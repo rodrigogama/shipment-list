@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { ReactComponent as TruckSVG } from '../../icons/icon_truck_boxtruck.svg';
 
 export const ShipmentListContainer = styled.ul`
   list-style: none;
@@ -97,11 +96,5 @@ export const PriceText = styled(TextBold)`
 
 export const TitleText = styled(TextRegular)`
   font-size: 13px;
-`;
-
-export const TruckIcon = styled(TruckSVG)`
-  width: 40px;
-  height: 40px;
-  margin-right: 12px;
-  fill: #58585b;
+  padding-left: 12px;
 `;

@@ -6,12 +6,13 @@ import {
   StopsContainer,
   StopWrapper,
   FlexRow,
-  TruckIcon,
   TitleText,
   TextRegular,
   TextBold,
   PriceText
 } from './ListShipmentsStyles';
+import { ReactComponent as TruckSVG } from '../../icons/icon_truck_boxtruck.svg';
+import IconComponent from '../Icon';
 
 const ListShipments = ({ items, onSelectShipment, selectedItemId }) => {
   return (
@@ -23,7 +24,7 @@ const ListShipments = ({ items, onSelectShipment, selectedItemId }) => {
           active={item.id === selectedItemId}
         >
           <FlexRow>
-            <TruckIcon />
+            <IconComponent component={<TruckSVG />} />
             <TitleText>{`${item.equipmentType} ${item.equipmentSize}"`}</TitleText>
             <PriceText>{formatCurrency(item.fare)}</PriceText>
           </FlexRow>
